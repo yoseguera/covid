@@ -2,7 +2,7 @@ datos <- read.csv("https://opendata.ecdc.europa.eu/covid19/casedistribution/csv"
 paises <- c("Spain", "Germany", "France", "Belgium", "United_Kingdom", "Italy", "Netherlands", "Singapore", "Japan", "South_Korea")
 
 png(file = "muertes-mundo.png")
-plot(0, type="l", log="y", xlim=c(0,60), ylim=c(1,500))
+plot(0, type="l", xlim=c(0,60), ylim=c(1,500))
 for (i in 1:length(paises))
 {    
     pais <- paises[i]
@@ -16,7 +16,7 @@ legend("topleft", legend=paises, col=1:length(paises), lty=1:length(paises))
 dev.off()
 
 png(file = "casos-mundo.png")
-plot(0, type="l", log="y", xlim=c(0,100), ylim=c(1,5000))
+plot(0, type="l", xlim=c(0,100), ylim=c(1,5000))
 for (i in 1:length(paises))
 {    
     pais <- paises[i]
@@ -32,7 +32,7 @@ dev.off()
 datos <- read.csv("https://raw.githubusercontent.com/datadista/datasets/master/COVID%2019/ccaa_covid19_casos_long.csv")
 ccaas <- read.csv("ccaa.csv", stringsAsFactors=FALSE)
 png(file = "casos-ccaa.png")
-plot(0, type="l", log="y", xlim=c(0,60), ylim=c(500,200000))
+plot(0, type="l", xlim=c(0,60), ylim=c(500,200000))
 for (i in 1:nrow(ccaas))
 {    
     ccaa <- ccaas[i,"nombre"]
@@ -49,7 +49,7 @@ dev.off()
 datos <- read.csv("https://raw.githubusercontent.com/datadista/datasets/master/COVID%2019/ccaa_covid19_fallecidos_long.csv")
 ccaas <- read.csv("ccaa.csv", stringsAsFactors=FALSE)
 png(file = "muertos-ccaa.png")
-plot(0, type="l", log="y", xlim=c(0,60), ylim=c(100,30000))
+plot(0, type="l", xlim=c(0,60), ylim=c(100,30000))
 for (i in 1:nrow(ccaas))
 {    
     ccaa <- ccaas[i,"nombre"]
